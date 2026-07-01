@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Get a Quote - Building Construction Co.</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Oswald:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F4B82F",
+              "background-light": "#FAFAFA",
+              "background-dark": "#121212",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E1E1E",
+              "text-light": "#1F2937",
+              "text-dark": "#E5E7EB",
+              "secondary-dark": "#232D3F",
+            },
+            fontFamily: {
+              display: ["Oswald", "sans-serif"],
+              body: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-300 overflow-x-hidden"
+  >
+    <!-- Navigation -->
+    <nav
+      class="bg-white dark:bg-surface-dark py-4 shadow-sm sticky top-0 z-50"
+    >
+      <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <a href="index.html" class="flex items-center gap-2">
+            <img
+              src="Pictures/Logo.png"
+              alt="Gelehova Investment Limited logo"
+              class="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full bg-white/80 p-1 shadow-sm"
+            />
+            <div class="flex flex-col">
+              <div
+                class="font-display font-bold text-xl sm:text-2xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+              >
+                GELE<span class="text-primary text-3xl sm:text-4xl leading-none -mt-1">H</span
+                >OVA
+              </div>
+              <span
+                class="text-[0.5rem] sm:text-[0.6rem] font-bold text-gray-500 uppercase tracking-widest mt-1 hidden sm:block"
+                >INVESTMENT LTD</span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="services.html">Services</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+          <a class="text-primary font-bold" href="quote.html">Get Quote</a>
+        </div>
+        <form class="hidden lg:flex items-center rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-3 py-2 shadow-sm">
+          <input
+            type="text"
+            placeholder="Search"
+            class="bg-transparent outline-none text-sm text-gray-700 dark:text-gray-200 w-28 lg:w-36"
+          />
+          <button type="submit" class="ml-2 text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Search">
+            <span class="material-icons-outlined text-lg">search</span>
+          </button>
+        </form>
+        <!-- Desktop Start Quote button -->
+        <button
+          class="hidden md:flex bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2 px-4 lg:px-6 rounded shadow-lg hover:shadow-xl transition-all text-sm lg:text-base"
+          onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})"
+        >
+          Start Quote
+        </button>
+        <!-- Mobile hamburger menu button -->
+        <button
+          id="hamburger-btn"
+          class="md:hidden hamburger-menu flex flex-col justify-center items-center w-10 h-10 relative focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 transition-all"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed inset-0 bg-white dark:bg-surface-dark z-40 pt-20 px-6 md:hidden"
+    >
+      <div class="flex flex-col gap-6">
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="index.html"
+        >
+          Home
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="about.html"
+        >
+          About Us
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="projects.html"
+        >
+          Projects
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="services.html"
+        >
+          Services
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="team.html"
+        >
+          Our Team
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="contact.html"
+        >
+          Contact
+        </a>
+        <a
+          class="text-lg font-medium text-primary font-bold py-3 border-b border-gray-100 dark:border-gray-800"
+          href="quote.html"
+        >
+          Get Quote
+        </a>
+        <button
+          class="mt-8 bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg transition-all w-full"
+          onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})"
+        >
+          Start Quote
+        </button>
+        <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Connect with us:</p>
+          <div class="flex gap-4">
+            <a
+              class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-gray-900 transition-all"
+              href="#"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-gray-900 transition-all"
+              href="#"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-gray-900 transition-all"
+              href="#"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-gray-900 transition-all"
+              href="#"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote Hero -->
+    <header class="bg-[#1A222E] dark:bg-black relative overflow-hidden">
+      <div
+        class="container mx-auto px-4 sm:px-6 pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-16 text-center min-h-[500px] md:min-h-[600px] flex flex-col justify-center items-center"
+      >
+        <div class="z-10 max-w-4xl mx-auto">
+          <h1
+            class="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary leading-tight mb-2"
+          >
+            Get Your Custom
+          </h1>
+          <h1
+            class="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6"
+          >
+            Construction Quote
+          </h1>
+          <p class="text-gray-400 text-base sm:text-lg mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto">
+            Get a detailed, no-obligation quote for your construction project in just 5 minutes. Our multi-step form ensures we capture all details for an accurate estimate.
+          </p>
+          <div class="flex flex-wrap gap-3 md:gap-4 justify-center">
+            <button
+              class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2.5 md:py-3 px-6 md:px-8 rounded transition-transform hover:scale-105 text-sm md:text-base"
+              onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})"
+            >
+              Start Your Quote
+            </button>
+            <button
+              class="border border-gray-500 hover:border-white text-white font-medium py-2.5 md:py-3 px-6 md:px-8 rounded transition-colors hover:bg-white/10 text-sm md:text-base"
+              onclick="document.getElementById('quote-process').scrollIntoView({behavior: 'smooth'})"
+            >
+              How It Works
+            </button>
+          </div>
+        </div>
+        <div
+          class="absolute w-[400px] h-[400px] md:w-[500px] md:h-[500px] bg-blue-900/20 rounded-full blur-3xl -top-10"
+        ></div>
+      </div>
+    </header>
+
+    <!-- How It Works -->
+    <section id="quote-process" class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 md:mb-16">
+          <h2
+            class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-3 md:mb-4"
+          >
+            How Our Quote Process Works
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-full md:max-w-2xl mx-auto text-sm md:text-base">
+            Get a comprehensive quote in just 4 simple steps. We'll provide you with a detailed breakdown of costs and timeline.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 text-center service-card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold mb-4">
+              1
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Fill Out Form</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Provide basic project details through our guided form. Takes about 5 minutes.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 text-center service-card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold mb-4">
+              2
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Project Review</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Our experts review your requirements and assess project scope.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 text-center service-card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold mb-4">
+              3
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Detailed Analysis</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              We calculate material costs, labor, permits, and create a timeline.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 text-center service-card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold mb-4">
+              4
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Receive Quote</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Get your comprehensive quote via email within 24-48 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Step Quote Form -->
+    <section id="quote-form" class="py-12 md:py-16 lg:py-20 bg-background-light dark:bg-[#151515]">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-10">
+            <h2
+              class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-3 md:mb-4"
+            >
+              Get Your Custom Quote
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm md:text-base">
+              Complete the form below for a detailed, no-obligation quote. All fields marked with * are required.
+            </p>
+          </div>
+
+          <!-- Progress Steps -->
+          <div class="mb-8 md:mb-12">
+            <div class="flex justify-between items-center mb-4">
+              <div class="flex items-center gap-4">
+                <div id="step-1" class="progress-step w-10 h-10 rounded-full bg-primary text-gray-900 font-bold flex items-center justify-center text-sm">
+                  1
+                </div>
+                <span class="hidden md:block text-sm font-medium text-gray-900 dark:text-white">Project Type</span>
+              </div>
+              <div class="h-1 flex-1 mx-4 bg-gray-200 dark:bg-gray-700"></div>
+              <div class="flex items-center gap-4">
+                <div id="step-2" class="progress-step w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold flex items-center justify-center text-sm">
+                  2
+                </div>
+                <span class="hidden md:block text-sm font-medium text-gray-500 dark:text-gray-400">Details</span>
+              </div>
+              <div class="h-1 flex-1 mx-4 bg-gray-200 dark:bg-gray-700"></div>
+              <div class="flex items-center gap-4">
+                <div id="step-3" class="progress-step w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold flex items-center justify-center text-sm">
+                  3
+                </div>
+                <span class="hidden md:block text-sm font-medium text-gray-500 dark:text-gray-400">Timeline</span>
+              </div>
+              <div class="h-1 flex-1 mx-4 bg-gray-200 dark:bg-gray-700"></div>
+              <div class="flex items-center gap-4">
+                <div id="step-4" class="progress-step w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold flex items-center justify-center text-sm">
+                  4
+                </div>
+                <span class="hidden md:block text-sm font-medium text-gray-500 dark:text-gray-400">Contact Info</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quote Form -->
+          <div class="bg-white dark:bg-surface-dark rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 dark:border-gray-800">
+            <form id="quoteForm" class="space-y-8">
+              <!-- Step 1: Project Type -->
+              <div id="form-step-1" class="form-step active">
+                <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">What type of project are you planning?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="project-type" value="residential-new" class="hidden peer" required>
+                    <div class="p-4 rounded-lg border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:border-gray-300 dark:hover:border-gray-600">
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                          <span class="material-icons-outlined">home</span>
+                        </div>
+                        <div>
+                          <h4 class="font-bold text-gray-900 dark:text-white">New Residential</h4>
+                          <p class="text-sm text-gray-500 dark:text-gray-400">Building a new house or residential structure</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="project-type" value="residential-renovation" class="hidden peer">
+                    <div class="p-4 rounded-lg border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:border-gray-300 dark:hover:border-gray-600">
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                          <span class="material-icons-outlined">home_repair_service</span>
+                        </div>
+                        <div>
+                          <h4 class="font-bold text-gray-900 dark:text-white">Residential Renovation</h4>
+                          <p class="text-sm text-gray-500 dark:text-gray-400">Remodeling or renovating existing home</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="project-type" value="commercial" class="hidden peer">
+                    <div class="p-4 rounded-lg border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:border-gray-300 dark:hover:border-gray-600">
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                          <span class="material-icons-outlined">apartment</span>
+                        </div>
+                        <div>
+                          <h4 class="font-bold text-gray-900 dark:text-white">Commercial Building</h4>
+                          <p class="text-sm text-gray-500 dark:text-gray-400">Office, retail, or commercial space</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="project-type" value="industrial" class="hidden peer">
+                    <div class="p-4 rounded-lg border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:border-gray-300 dark:hover:border-gray-600">
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                          <span class="material-icons-outlined">factory</span>
+                        </div>
+                        <div>
+                          <h4 class="font-bold text-gray-900 dark:text-white">Industrial</h4>
+                          <p class="text-sm text-gray-500 dark:text-gray-400">Warehouse, factory, or industrial facility</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer md:col-span-2">
+                    <input type="radio" name="project-type" value="other" class="hidden peer">
+                    <div class="p-4 rounded-lg border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:border-gray-300 dark:hover:border-gray-600">
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                          <span class="material-icons-outlined">construction</span>
+                        </div>
+                        <div>
+                          <h4 class="font-bold text-gray-900 dark:text-white">Other Project</h4>
+                          <p class="text-sm text-gray-500 dark:text-gray-400">Different type of construction project</p>
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="mt-8 flex justify-end">
+                  <button type="button" data-next="2" class="next-step bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors">
+                    Next: Project Details →
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: Project Details -->
+              <div id="form-step-2" class="form-step">
+                <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">Tell us more about your project</h3>
+                <div class="space-y-6">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="project-size">
+                      Project Size (Square Feet) *
+                    </label>
+                    <input
+                      type="number"
+                      id="project-size"
+                      name="project-size"
+                      min="100"
+                      max="100000"
+                      required
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="e.g., 2500"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="project-description">
+                      Project Description *
+                    </label>
+                    <textarea
+                      id="project-description"
+                      name="project-description"
+                      rows="4"
+                      required
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                      placeholder="Describe your project in detail, including specific requirements, materials preference, and any special features..."
+                    ></textarea>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">
+                      What services do you need? (Select all that apply)
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="design" class="rounded text-primary focus:ring-primary">
+                        <span>Architectural Design</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="construction" class="rounded text-primary focus:ring-primary">
+                        <span>Full Construction</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="renovation" class="rounded text-primary focus:ring-primary">
+                        <span>Renovation/Remodeling</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="foundation" class="rounded text-primary focus:ring-primary">
+                        <span>Foundation Work</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="electrical" class="rounded text-primary focus:ring-primary">
+                        <span>Electrical</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="plumbing" class="rounded text-primary focus:ring-primary">
+                        <span>Plumbing</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="roofing" class="rounded text-primary focus:ring-primary">
+                        <span>Roofing</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="checkbox" name="services[]" value="landscaping" class="rounded text-primary focus:ring-primary">
+                        <span>Landscaping</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-8 flex justify-between">
+                  <button type="button" data-prev="1" class="prev-step text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    ← Back
+                  </button>
+                  <button type="button" data-next="3" class="next-step bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors">
+                    Next: Timeline & Budget →
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 3: Timeline & Budget -->
+              <div id="form-step-3" class="form-step">
+                <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">Timeline & Budget</h3>
+                <div class="space-y-6">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      When would you like to start the project? *
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="radio" name="timeline" value="immediate" class="text-primary focus:ring-primary" required>
+                        <span>Immediately (1-4 weeks)</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="radio" name="timeline" value="soon" class="text-primary focus:ring-primary">
+                        <span>Soon (1-3 months)</span>
+                      </label>
+                      <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+                        <input type="radio" name="timeline" value="planning" class="text-primary focus:ring-primary">
+                        <span>Planning Stage (3+ months)</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">
+                      What is your estimated budget range? *
+                    </label>
+                    <div class="space-y-4">
+                      <input
+                        type="range"
+                        id="budget-slider"
+                        name="budget"
+                        min="10000"
+                        max="500000"
+                        step="10000"
+                        value="150000"
+                        class="w-full budget-slider h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                      />
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">$10,000</span>
+                        <div class="text-center">
+                          <div id="budget-value" class="text-2xl font-bold text-primary">$150,000</div>
+                          <div class="text-sm text-gray-500 dark:text-gray-400">Estimated Budget</div>
+                        </div>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">$500,000+</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="special-requirements">
+                      Any special requirements or considerations?
+                    </label>
+                    <textarea
+                      id="special-requirements"
+                      name="special-requirements"
+                      rows="3"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                      placeholder="e.g., eco-friendly materials, specific building codes, accessibility requirements..."
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="mt-8 flex justify-between">
+                  <button type="button" data-prev="2" class="prev-step text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    ← Back
+                  </button>
+                  <button type="button" data-next="4" class="next-step bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors">
+                    Next: Contact Information →
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 4: Contact Information -->
+              <div id="form-step-4" class="form-step">
+                <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">Your Contact Information</h3>
+                <div class="space-y-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="first-name">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="first-name"
+                        name="first-name"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="last-name">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="last-name"
+                        name="last-name"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="Doe"
+                      />
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="email">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="phone">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="+1 (555) 123-4567"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="address">
+                      Project Address (if known)
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="123 Main Street, City, State, ZIP"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="hear-about">
+                      How did you hear about us?
+                    </label>
+                    <select
+                      id="hear-about"
+                      name="hear-about"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Select an option</option>
+                      <option value="search">Search Engine (Google, etc.)</option>
+                      <option value="social">Social Media</option>
+                      <option value="referral">Friend/Colleague Referral</option>
+                      <option value="ad">Online Advertisement</option>
+                      <option value="past-client">Past Client</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      name="consent"
+                      required
+                      class="mt-1"
+                    />
+                    <label for="consent" class="text-sm text-gray-600 dark:text-gray-300">
+                      I agree to receive a detailed quote and understand that this is a no-obligation estimate. I consent to Building Construction Co. contacting me via email or phone regarding my project inquiry.*
+                    </label>
+                  </div>
+                </div>
+                <div class="mt-8 flex justify-between">
+                  <button type="button" data-prev="3" class="prev-step text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                    ← Back
+                  </button>
+                  <button type="submit" class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105 shadow-lg">
+                    Submit for Quote
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Quote Guarantee -->
+          <div class="mt-8 p-6 bg-primary/10 dark:bg-primary/5 rounded-xl border border-primary/20">
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-gray-900">
+                  <span class="material-icons-outlined">verified</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-1">Quote Guarantee</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  We guarantee that our quotes are comprehensive and transparent with no hidden fees. You'll receive a detailed breakdown of all costs, including materials, labor, permits, and timeline. Your quote is valid for 30 days.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 md:mb-16">
+          <h2
+            class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-3 md:mb-4"
+          >
+            What's Included in Your Quote
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-full md:max-w-2xl mx-auto text-sm md:text-base">
+            Our comprehensive quotes give you complete clarity on your project costs and timeline.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
+              <span class="material-icons-outlined">attach_money</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Detailed Cost Breakdown</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Line-by-line breakdown of all expenses including materials, labor, permits, and contingency funds.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
+              <span class="material-icons-outlined">schedule</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Project Timeline</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Detailed project schedule with milestones, start dates, and estimated completion dates.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
+              <span class="material-icons-outlined">description</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Material Specifications</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Specifications for all proposed materials including brands, grades, and quality standards.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
+              <span class="material-icons-outlined">engineering</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Labor Requirements</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Breakdown of required skilled trades, labor hours, and team structure for your project.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
+              <span class="material-icons-outlined">gpp_good</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Permit & Regulation Info</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Information on required permits, inspections, and compliance with local building codes.
+            </p>
+          </div>
+          <div class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-xl mb-4">
+              <span class="material-icons-outlined">support_agent</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2">Project Manager Assignment</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Dedicated project manager who will oversee your project from start to finish.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-secondary-dark">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 md:mb-16">
+          <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-3 md:mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-full md:max-w-2xl mx-auto text-sm md:text-base">
+            Get answers to common questions about our quote process and construction services.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div class="faq-item bg-white dark:bg-surface-dark rounded-lg shadow-sm">
+            <button class="faq-question w-full p-4 md:p-6 text-left flex justify-between items-center">
+              <span class="font-medium text-gray-900 dark:text-white">How long does it take to receive a quote?</span>
+              <span class="material-icons-outlined text-primary transition-transform">expand_more</span>
+            </button>
+            <div class="faq-answer p-4 md:p-6 pt-0 text-gray-600 dark:text-gray-300">
+              <p>We typically provide comprehensive quotes within 24-48 hours after receiving all necessary project details. For complex projects, it may take up to 72 hours to ensure accuracy.</p>
+            </div>
+          </div>
+          <div class="faq-item bg-white dark:bg-surface-dark rounded-lg shadow-sm">
+            <button class="faq-question w-full p-4 md:p-6 text-left flex justify-between items-center">
+              <span class="font-medium text-gray-900 dark:text-white">Is the quote binding?</span>
+              <span class="material-icons-outlined text-primary transition-transform">expand_more</span>
+            </button>
+            <div class="faq-answer p-4 md:p-6 pt-0 text-gray-600 dark:text-gray-300">
+              <p>No, our initial quote is a non-binding estimate. Once you decide to proceed, we'll create a formal contract with exact pricing and terms for your approval.</p>
+            </div>
+          </div>
+          <div class="faq-item bg-white dark:bg-surface-dark rounded-lg shadow-sm">
+            <button class="faq-question w-full p-4 md:p-6 text-left flex justify-between items-center">
+              <span class="font-medium text-gray-900 dark:text-white">What factors affect the final price?</span>
+              <span class="material-icons-outlined text-primary transition-transform">expand_more</span>
+            </button>
+            <div class="faq-answer p-4 md:p-6 pt-0 text-gray-600 dark:text-gray-300">
+              <p>Key factors include: project size and complexity, material selections, site conditions, permit requirements, timeline constraints, and any custom features or specialized requirements.</p>
+            </div>
+          </div>
+          <div class="faq-item bg-white dark:bg-surface-dark rounded-lg shadow-sm">
+            <button class="faq-question w-full p-4 md:p-6 text-left flex justify-between items-center">
+              <span class="font-medium text-gray-900 dark:text-white">Do you offer financing options?</span>
+              <span class="material-icons-outlined text-primary transition-transform">expand_more</span>
+            </button>
+            <div class="faq-answer p-4 md:p-6 pt-0 text-gray-600 dark:text-gray-300">
+              <p>Yes, we partner with several financial institutions to offer competitive financing options for qualified clients. We can discuss these options after providing your initial quote.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 md:py-16 lg:py-20 bg-primary relative overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-4 md:mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-gray-900/80 max-w-full md:max-w-2xl mx-auto text-sm md:text-base mb-8 md:mb-10">
+          Submit your quote request today and receive a comprehensive estimate from our construction experts. No obligation, just transparent pricing and professional guidance.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button
+            class="bg-gray-900 hover:bg-black text-white font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105 shadow-lg"
+            onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})"
+          >
+            Start Your Quote
+          </button>
+          <button
+            class="border-2 border-gray-900 hover:bg-gray-900/10 text-gray-900 font-bold py-3 px-8 rounded-lg transition-colors"
+            onclick="window.location.href='contact.html'"
+          >
+            Contact Our Team
+          </button>
+        </div>
+        <p class="text-gray-900/60 text-sm mt-6">
+          Need immediate assistance? Call us at <span class="font-bold">+675 70613174-GELEHOVA</span>
+        </p>
+      </div>
+      <div class="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-yellow-300/30 rounded-full blur-3xl -bottom-20 -right-20"></div>
+      <div class="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-yellow-400/20 rounded-full blur-3xl -top-10 -left-10"></div>
+    </section>
+
+    <!-- Footer -->
+        <!-- Footer -->
+    <footer
+      class="bg-white dark:bg-background-dark py-12 md:py-16 border-t border-gray-200 dark:border-gray-800"
+    >
+      <div class="container mx-auto px-4 sm:px-6 text-center">
+        <div class="flex justify-center items-center gap-2 mb-6 md:mb-8">
+          <div
+            class="font-display font-bold text-2xl md:text-3xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+          >
+            GELE<span class="text-primary text-4xl md:text-5xl leading-none -mt-1 md:-mt-2">H</span
+            >OVA
+          </div>
+        </div>
+        <p
+          class="text-[0.5rem] md:text-[0.6rem] font-bold text-gray-400 uppercase tracking-widest -mt-4 md:-mt-6 mb-6 md:mb-8"
+        >
+          Investment LTD
+        </p>
+        <div
+          class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 mb-8 md:mb-10 text-sm font-medium text-gray-600 dark:text-gray-400"
+        >
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="services.html">Services</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+          <a class="text-primary font-bold" href="quote.html">Get Quote</a>
+        </div>
+        <div class="flex justify-center gap-3 md:gap-4 mb-8 md:mb-10">
+          <a
+            class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-facebook-f text-sm md:text-base"></i>
+          </a>
+          <a
+            class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-twitter text-sm md:text-base"></i>
+          </a>
+          <a
+            class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-linkedin-in text-sm md:text-base"></i>
+          </a>
+          <a
+            class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-instagram text-sm md:text-base"></i>
+          </a>
+        </div>
+        <p class="text-xs md:text-sm text-gray-500 dark:text-gray-500 px-2">
+          © 2025 Gelehova Investment LTD. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button
+      class="theme-toggle w-10 h-10 md:w-12 md:h-12 bg-primary text-gray-900 rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-500 focus:outline-none transition-all"
+      onclick="document.documentElement.classList.toggle('dark')"
+    >
+      <span class="material-icons-outlined text-lg">brightness_4</span>
+    </button>
+
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

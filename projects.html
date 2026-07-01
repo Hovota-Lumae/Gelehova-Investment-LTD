@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Projects - Building Construction Co.</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Oswald:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F4B82F",
+              "background-light": "#FAFAFA",
+              "background-dark": "#121212",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E1E1E",
+              "text-light": "#1F2937",
+              "text-dark": "#E5E7EB",
+              "secondary-dark": "#232D3F",
+            },
+            fontFamily: {
+              display: ["Oswald", "sans-serif"],
+              body: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-300"
+  >
+    <!-- Navigation -->
+    <nav
+      class="bg-white dark:bg-surface-dark py-4 shadow-sm sticky top-0 z-50"
+    >
+      <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <a href="index.html" class="flex items-center gap-2">
+            <img
+              src="Pictures/Logo.png"
+              alt="Gelehova Investment Limited logo"
+              class="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full bg-white/80 p-1 shadow-sm"
+            />
+            <div class="flex flex-col">
+              <div
+                class="font-display font-bold text-xl sm:text-2xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+              >
+                GELE<span class="text-primary text-3xl sm:text-4xl leading-none -mt-1">H</span
+                >OVA
+              </div>
+              <span
+                class="text-[0.5rem] sm:text-[0.6rem] font-bold text-gray-500 uppercase tracking-widest mt-1 hidden sm:block"
+                >INVESTMENT LTD</span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="services.html">Services</a>
+          <a class="text-primary font-bold" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </div>
+        <form class="hidden lg:flex items-center rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-3 py-2 shadow-sm">
+          <input
+            type="text"
+            placeholder="Search"
+            class="bg-transparent outline-none text-sm text-gray-700 dark:text-gray-200 w-28 lg:w-36"
+          />
+          <button type="submit" class="ml-2 text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Search">
+            <span class="material-icons-outlined text-lg">search</span>
+          </button>
+        </form>
+        <!-- Desktop Sign Up button -->
+        <button
+          class="hidden md:flex bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2 px-4 lg:px-6 rounded shadow-lg hover:shadow-xl transition-all text-sm lg:text-base"
+          onclick="window.location.href='quote.html'"
+        >
+          Get Quote
+        </button>
+        <!-- Mobile hamburger menu button -->
+        <button
+          id="hamburger-btn"
+          class="md:hidden hamburger-menu flex flex-col justify-center items-center w-10 h-10 relative focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 transition-all"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed inset-0 bg-white dark:bg-surface-dark z-40 pt-20 px-6 md:hidden"
+    >
+      <div class="flex flex-col gap-6">
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="index.html"
+        >
+          Home
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="about.html"
+        >
+          About Us
+        </a>
+        <a
+          class="text-lg font-medium text-primary font-bold py-3 border-b border-gray-100 dark:border-gray-800"
+          href="projects.html"
+        >
+          Projects
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="services.html"
+        >
+          Services
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="team.html"
+        >
+          Our Team
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="contact.html"
+        >
+          Contact
+        </a>
+        <button
+          class="mt-8 bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg transition-all w-full"
+          onclick="window.location.href='quote.html'"
+        >
+          Get Quote
+        </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Hero -->
+    <header class="bg-[#1A222E] dark:bg-black relative overflow-hidden">
+      <div
+        class="container mx-auto px-6 pt-16 pb-0 md:pt-24 md:pb-0 grid md:grid-cols-2 gap-12 items-center min-h-[600px]"
+      >
+        <div class="z-10 pb-16">
+          <h1
+            class="font-display font-bold text-5xl md:text-6xl text-primary leading-tight mb-2"
+          >
+            Building Excellence
+          </h1>
+          <h1
+            class="font-display font-bold text-5xl md:text-6xl text-white leading-tight mb-6"
+          >
+            Our Portfolio.
+          </h1>
+          <p class="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed">
+            Explore our portfolio of completed projects across residential,
+            commercial, and industrial sectors. Quality craftsmanship in every
+            detail.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded transition-transform hover:scale-105"
+            >
+              View All Projects
+            </button>
+            <button
+              class="border border-gray-500 hover:border-white text-white font-medium py-3 px-8 rounded transition-colors hover:bg-white/10"
+              onclick="window.location.href='contact.html'"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+        <div class="relative h-full flex items-end justify-center md:justify-end">
+          <div
+            class="absolute w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-3xl -top-10 right-10"
+          ></div>
+          <div
+            class="relative z-10 max-h-[600px] w-full flex items-center justify-center"
+          >
+            <div
+              class="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 md:p-12 relative overflow-hidden w-full"
+              style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2ySOMgUw7N7cO-J5DHK7gQNFlu6lARALRT-lHb_SiombTnRlv7q1nmm1SIgK4638dWYtGlZrKJfvnh_Ro567L3Wc1s5UWFFkAc4udESVjKkcKJPwbWGaPch_0fJubRbs5Gh1rjr8kzFLvL5XIjeXGlGimKYUXZz77-01w2hI85KtlF8_JrngGXBti8VfdjLSHtfnydmvazbbv5SxCiWAZBMPWP4YLs4lyGBEatt8wmYJ5AmFz3UU0UlCeQ-o1qUFZqoZTnFfQx9LD");'
+            >
+              <div
+                class="flex flex-col gap-4 text-center max-w-[700px] z-10"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <!-- Search and Filters -->
+        <div class="mb-12">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+            <div>
+              <h2
+                class="font-display font-bold text-4xl text-gray-900 dark:text-white mb-2"
+              >
+                Featured Projects
+              </h2>
+              <p class="text-gray-500 dark:text-gray-400 max-w-xl">
+                Browse through our diverse portfolio showcasing exceptional
+                construction work.
+              </p>
+            </div>
+
+            </div>
+          </div>
+          
+          <!-- Filter Buttons -->
+<div class="flex gap-3 flex-wrap pb-6 border-b border-gray-200 dark:border-gray-800">
+  <button class="filter-button flex h-9 items-center justify-center px-5 rounded-full bg-primary text-gray-900 text-sm font-bold transition-colors">
+    All Projects
+  </button>
+  <button class="filter-button flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium transition-colors">
+    Residential
+  </button>
+  <button class="filter-button flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium transition-colors">
+    Commercial
+  </button>
+  <button class="filter-button flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium transition-colors">
+    Industrial
+  </button>
+  <button class="filter-button flex h-9 items-center justify-center px-5 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium transition-colors">
+    Renovations
+  </button>
+</div>
+
+
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div
+            class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden project-card shadow-sm hover:shadow-lg border border-gray-100 dark:border-gray-800"
+          >
+            <div class="relative overflow-hidden h-64">
+              <div
+                class="w-full h-full project-image bg-cover bg-center"
+                style='background-image: url("Pictures/Image11.jpeg")'
+              ></div>
+              <div
+                class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm"
+              >
+                Church
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors cursor-pointer"
+              >
+                The Church of Jesus Christ of Latter-day Saints.
+              </h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                Kukipi, Kerema, Papua New Guinea. A Church chapel with modern design and sustainable features, serving the local community's spiritual needs.
+              </p>
+              <div class="flex items-center gap-1 text-primary text-sm font-bold">
+                <span>View Case Study</span>
+                <span class="material-icons-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div
+            class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden project-card shadow-sm hover:shadow-lg border border-gray-100 dark:border-gray-800"
+          >
+            <div class="relative overflow-hidden h-64">
+              <div
+                class="w-full h-full project-image bg-cover bg-center"
+                style='background-image: url("Pictures/Image11.jpeg")'
+              ></div>
+              <div
+                class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm"
+              >
+                Commercial
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors cursor-pointer"
+              >
+                Westside Medical Center
+              </h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                State-of-the-art medical facility renovation and expansion.
+              </p>
+              <div class="flex items-center gap-1 text-primary text-sm font-bold">
+                <span>View Case Study</span>
+                <span class="material-icons-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div
+            class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden project-card shadow-sm hover:shadow-lg border border-gray-100 dark:border-gray-800"
+          >
+            <div class="relative overflow-hidden h-64">
+              <div
+                class="w-full h-full project-image bg-cover bg-center"
+                style='background-image: url("Pictures/Image11.jpeg")'
+              ></div>
+              <div
+                class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm"
+              >
+                Industrial
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors cursor-pointer"
+              >
+                Harbor Logistics Warehouse
+              </h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                50,000 sq ft industrial storage solution near the port.
+              </p>
+              <div class="flex items-center gap-1 text-primary text-sm font-bold">
+                <span>View Case Study</span>
+                <span class="material-icons-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4 -->
+          <div
+            class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden project-card shadow-sm hover:shadow-lg border border-gray-100 dark:border-gray-800"
+          >
+            <div class="relative overflow-hidden h-64">
+              <div
+                class="w-full h-full project-image bg-cover bg-center"
+                style='background-image: url("Pictures/Image11.jpeg");'
+              ></div>
+              <div
+                class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm"
+              >
+                Residential
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors cursor-pointer"
+              >
+                Oakwood Family Home
+              </h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                Custom private residence with sustainable features.
+              </p>
+              <div class="flex items-center gap-1 text-primary text-sm font-bold">
+                <span>View Case Study</span>
+                <span class="material-icons-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 5 -->
+          <div
+            class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden project-card shadow-sm hover:shadow-lg border border-gray-100 dark:border-gray-800"
+          >
+            <div class="relative overflow-hidden h-64">
+              <div
+                class="w-full h-full project-image bg-cover bg-center"
+                style='background-image: url("Pictures/Image11.jpeg");'
+              ></div>
+              <div
+                class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm"
+              >
+                Commercial
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors cursor-pointer"
+              >
+                City Center Plaza
+              </h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                Mixed-use commercial retail space with outdoor dining.
+              </p>
+              <div class="flex items-center gap-1 text-primary text-sm font-bold">
+                <span>View Case Study</span>
+                <span class="material-icons-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 6 -->
+          <div
+            class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden project-card shadow-sm hover:shadow-lg border border-gray-100 dark:border-gray-800"
+          >
+            <div class="relative overflow-hidden h-64">
+              <div
+                class="w-full h-full project-image bg-cover bg-center"
+                style='background-image: url("Pictures/Image11.jpeg");'
+              ></div>
+              <div
+                class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm"
+              >
+                Institutional
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-display font-bold text-xl text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors cursor-pointer"
+              >
+                Green Valley School
+              </h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                Educational wing expansion and sports facility.
+              </p>
+              <div class="flex items-center gap-1 text-primary text-sm font-bold">
+                <span>View Case Study</span>
+                <span class="material-icons-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="flex justify-center pt-12 pb-4">
+          <button
+            class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg"
+          >
+            Load More Projects
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-background-light dark:bg-[#151515]">
+      <div class="container mx-auto px-6">
+        <div
+          class="bg-primary/10 dark:bg-primary/5 border border-primary/20 rounded-2xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
+        >
+          <div class="flex flex-col gap-3 max-w-xl">
+            <h2
+              class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white"
+            >
+              Have a vision? Let's build it.
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 text-lg">
+              From concept to completion, we bring your architectural dreams to
+              life with precision and quality.
+            </p>
+          </div>
+          <button
+            class="shrink-0 bg-primary hover:bg-yellow-500 text-gray-900 font-bold text-base px-8 py-4 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1"
+            onclick="window.location.href='contact.html'"
+          >
+            Start Your Project
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white dark:bg-background-dark py-16 border-t border-gray-200 dark:border-gray-800"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center items-center gap-2 mb-8">
+          <div
+            class="font-display font-bold text-3xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+          >
+            GELE<span class="text-primary text-5xl leading-none -mt-2">H</span
+            >VA
+          </div>
+        </div>
+        <p
+          class="text-[0.6rem] font-bold text-gray-400 uppercase tracking-widest -mt-6 mb-8"
+        >
+          INVESTMENT LIMITED
+        </p>
+        <div
+          class="flex flex-wrap justify-center gap-8 md:gap-12 mb-10 text-sm font-medium text-gray-600 dark:text-gray-400"
+        >
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="services.html">Services</a>
+          <a class="text-primary font-bold" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </div>
+        <div class="flex justify-center gap-4 mb-10">
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-500">
+          © 2026 Gelehova Investment Limited. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button
+      class="theme-toggle w-12 h-12 bg-primary text-gray-900 rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-500 focus:outline-none transition-all"
+      onclick="toggleTheme()"
+    >
+      <span class="material-icons-outlined">brightness_4</span>
+    </button>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

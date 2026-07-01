@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us - GELEHOVA INVESTMENT LIMITED</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Oswald:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F4B82F",
+              "background-light": "#FAFAFA",
+              "background-dark": "#121212",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E1E1E",
+              "text-light": "#1F2937",
+              "text-dark": "#E5E7EB",
+              "secondary-dark": "#232D3F",
+            },
+            fontFamily: {
+              display: ["Oswald", "sans-serif"],
+              body: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Additional custom styles for better mobile responsiveness */
+      @media (max-width: 768px) {
+        .mobile-container-padding {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+        .mobile-image-grid {
+          height: auto !important;
+          min-height: 300px;
+        }
+        .mobile-image-grid > div {
+          height: 200px !important;
+        }
+        .mobile-image-grid .col-span-2 {
+          height: 250px !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .mobile-text-center {
+          text-align: center !important;
+        }
+        .mobile-full-width {
+          width: 100% !important;
+        }
+        .mobile-stack {
+          flex-direction: column !important;
+        }
+        .mobile-gap-y-4 > * + * {
+          margin-top: 1rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-300 overflow-x-hidden"
+  >
+    <!-- Navigation -->
+    <nav
+      class="bg-white dark:bg-surface-dark py-4 shadow-sm sticky top-0 z-50"
+    >
+      <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <a href="index.html" class="flex items-center gap-2">
+            <img
+              src="Pictures/Logo.png"
+              alt="Gelehova Investment Limited logo"
+              class="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full bg-white/80 p-1 shadow-sm"
+            />
+            <div class="flex flex-col">
+              <div
+                class="font-display font-bold text-xl sm:text-2xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+              >
+                GELE<span class="text-primary text-3xl sm:text-4xl leading-none -mt-1">H</span
+                >OVA
+              </div>
+              <span
+                class="text-[0.5rem] sm:text-[0.6rem] font-bold text-gray-500 uppercase tracking-widest mt-1 hidden sm:block"
+                >INVESTMENT LIMITED</span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="text-primary font-bold" href="services.html">Services</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </div>
+        <form class="hidden lg:flex items-center rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-3 py-2 shadow-sm">
+          <input
+            type="text"
+            placeholder="Search"
+            class="bg-transparent outline-none text-sm text-gray-700 dark:text-gray-200 w-28 lg:w-36"
+          />
+          <button type="submit" class="ml-2 text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Search">
+            <span class="material-icons-outlined text-lg">search</span>
+          </button>
+        </form>
+        <!-- Desktop Contact button -->
+        <button
+          class="hidden md:flex bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2 px-4 lg:px-6 rounded shadow-lg hover:shadow-xl transition-all text-sm lg:text-base"
+          onclick="window.location.href='quote.html'"
+        >
+          Get Quote
+        </button>
+        <!-- Mobile hamburger menu button -->
+        <button
+          id="hamburger-btn"
+          class="md:hidden hamburger-menu flex flex-col justify-center items-center w-10 h-10 relative focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 transition-all"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed inset-0 bg-white dark:bg-surface-dark z-40 pt-20 px-6 md:hidden"
+    >
+      <div class="flex flex-col gap-6">
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="index.html"
+        >
+          Home
+        </a>
+        <a
+          class="text-lg font-medium text-primary font-bold py-3 border-b border-gray-100 dark:border-gray-800"
+          href="about.html"
+        >
+          About Us
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="projects.html"
+        >
+          Projects
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="services.html"
+        >
+          Services
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="team.html"
+        >
+          Our Team
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="contact.html"
+        >
+          Contact
+        </a>
+        <button
+          class="mt-8 bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg transition-all w-full"
+          onclick="window.location.href='quote.html'"
+        >
+          Get Quote
+        </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Hero -->
+    <header class="bg-[#1A222E] dark:bg-black relative overflow-hidden">
+      <div
+        class="container mx-auto px-4 sm:px-6 pt-12 md:pt-24 pb-0 md:pb-0 grid md:grid-cols-2 gap-8 md:gap-12 items-center min-h-[500px] md:min-h-[600px]"
+      >
+        <div class="z-10 pb-8 md:pb-16 order-2 md:order-1 mobile-text-center">
+          <h1
+            class="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary leading-tight mb-2"
+          >
+            Building Since
+          </h1>
+          <h1
+            class="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6"
+          >
+            2026.
+          </h1>
+          <p class="text-gray-400 text-base md:text-lg mb-6 md:mb-8 max-w-full md:max-w-lg leading-relaxed mx-auto md:mx-0">
+            For nearly four decades, we've been transforming skylines and
+            communities with exceptional construction expertise, innovative
+            solutions, and unwavering commitment to quality.
+          </p>
+          <div class="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
+            <button
+              class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2.5 md:py-3 px-6 md:px-8 rounded transition-transform hover:scale-105 text-sm md:text-base mobile-full-width sm:mobile-full-width"
+            >
+              Our Story
+            </button>
+            <button
+              class="border border-gray-500 hover:border-white text-white font-medium py-2.5 md:py-3 px-6 md:px-8 rounded transition-colors hover:bg-white/10 text-sm md:text-base mobile-full-width sm:mobile-full-width"
+              onclick="window.location.href='team.html'"
+            >
+              Meet Our Team
+            </button>
+          </div>
+        </div>
+        <div class="relative h-full flex items-end justify-center md:justify-end order-1 md:order-2 mt-8 md:mt-0">
+          <div
+            class="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-blue-900/20 rounded-full blur-3xl -top-10 md:right-10"
+          ></div>
+          <img
+            alt="Construction legacy building"
+            class="relative z-10 max-h-[400px] md:max-h-[600px] w-full max-w-full md:max-w-none object-cover rounded-lg md:rounded-2xl"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBynAFiU1lQIGby6qSLMQqdT-yZ_D2prI2r7e_XQnRLCnF5lQclgK1IRp-IX17N2Z2d7W36V1T4ac4R6HfeA6h68lQMy3CCbOrqSfvTjyI2QjY8GkJ1QwG9EDa-k9qUGF7-73vtvQ00k0_c0gfFPrBz3U-sqjSqwTjFz__TqjRWRoQ5D5-QaJ0CqgNsclmZRO3h6yYx8yJUGChNvLSnqlxqXvxGSvjCOv_eW2c1rM5rck7Uo-JcDY4PyAn8Vn6CxS6ZBlqJX"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm counter-item border border-gray-100 dark:border-gray-800 text-center"
+          >
+            <div
+              class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-primary mb-2"
+              data-count="38"
+            >
+              0+
+            </div>
+            <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1">
+              Years Experience
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">
+              Building excellence since 2026!
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm counter-item border border-gray-100 dark:border-gray-800 text-center"
+          >
+            <div
+              class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-primary mb-2"
+              data-count="425"
+            >
+              0+
+            </div>
+            <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1">
+              Projects Completed
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">
+              Across residential, commercial & industrial
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm counter-item border border-gray-100 dark:border-gray-800 text-center"
+          >
+            <div
+              class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-primary mb-2"
+              data-count="150"
+            >
+              0+
+            </div>
+            <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1">
+              Expert Team Members
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">
+              Skilled professionals and specialists
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm counter-item border border-gray-100 dark:border-gray-800 text-center"
+          >
+            <div
+              class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-primary mb-2"
+              data-count="98"
+            >
+              0%
+            </div>
+            <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-white mb-1">
+              Client Satisfaction
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">
+              Repeat clients and referrals
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-12 md:py-16 lg:py-20 bg-background-light dark:bg-[#151515]">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div class="order-2 lg:order-1 mobile-text-center lg:text-left">
+            <h2
+              class="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-4 md:mb-6 leading-tight"
+            >
+              Our Story: Building Dreams Into Reality
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400 mb-4 md:mb-6 leading-relaxed">
+              Founded in 1985 by John Richardson, Building Construction Co.
+              started as a small family business with a single truck and a big
+              dream. Today, we're a multi-generational company that has grown to
+              become one of the most trusted names in the construction
+              industry.
+            </p>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed">
+              Our journey began with residential renovations and has evolved
+              into comprehensive construction services spanning commercial
+              developments, industrial complexes, and innovative architectural
+              projects. Through economic shifts and industry changes, our
+              commitment to quality has remained unwavering.
+            </p>
+            <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              <div class="flex items-start gap-3">
+                <span class="text-primary mt-1"
+                  ><i class="fa-solid fa-circle-check"></i
+                ></span>
+                <div class="text-left">
+                  <h4 class="font-bold text-gray-900 dark:text-white text-sm md:text-base">
+                    Family Values, Professional Standards
+                  </h4>
+                  <p class="text-xs md:text-sm text-gray-600 dark:text-gray-300">
+                    Maintaining the personal touch of a family business with
+                    corporate-level professionalism.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary mt-1"
+                  ><i class="fa-solid fa-circle-check"></i
+                ></span>
+                <div class="text-left">
+                  <h4 class="font-bold text-gray-900 dark:text-white text-sm md:text-base">
+                    Innovation Through Generations
+                  </h4>
+                  <p class="text-xs md:text-sm text-gray-600 dark:text-gray-300">
+                    Embracing new technologies while preserving time-tested
+                    craftsmanship.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary mt-1"
+                  ><i class="fa-solid fa-circle-check"></i
+                ></span>
+                <div class="text-left">
+                  <h4 class="font-bold text-gray-900 dark:text-white text-sm md:text-base">
+                    Community Focused Growth
+                  </h4>
+                  <p class="text-xs md:text-sm text-gray-600 dark:text-gray-300">
+                    Building not just structures, but stronger communities
+                    wherever we work.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2.5 md:py-3 px-6 md:px-8 rounded flex items-center gap-2 transition-transform hover:translate-x-1 justify-center lg:justify-start w-full sm:w-auto"
+            >
+              View Our Timeline
+              <span class="material-icons-outlined text-lg"
+                >arrow_circle_right</span
+              >
+            </button>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="grid grid-cols-2 gap-3 md:gap-4 h-auto md:h-[400px] lg:h-[500px] mobile-image-grid">
+              <div
+                class="col-span-2 h-[200px] md:h-[220px] lg:h-[280px] rounded-xl md:rounded-2xl lg:rounded-[2.5rem] overflow-hidden relative group"
+              >
+                <img
+                  alt="Founder and team historical photo"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbwXG5_vrKSwckYWN2zAouGquWq0evPmXcq6vx6IOCZ9oQfq15bC53XKtKPy5TzXo5DY3dZCSiN7a9MWwlZpHYQdfqY3lzCxh2RxmHQz7t70y32A3l0PH0e2ALJ2aOalXNq5L9Vt-f6xQj4TjOZJkMhY8EXsWdfCWeXj7vITbVpVkKj23BocZ91aVMxrYdNlJzXX7zCjMLyS_vgGgH1icPVMqCV-vBRjDk8E3AvvHcSikO2QJ-h9AGDPK5tajMPQwB-HtQ0UDHYMi9I"
+                />
+              </div>
+              <div
+                class="h-[150px] md:h-[180px] lg:h-[200px] rounded-xl md:rounded-2xl lg:rounded-[2.5rem] lg:rounded-tr-none overflow-hidden relative group"
+              >
+                <img
+                  alt="Early construction project"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy2KBnICwOGYpNkf7vqMZksV4jFTrnStogM5WVjR7k-S9csl9Zq-J7NcM9lzAL3pVp9x1TGGv0JdQ2qy9FISkOMFswLe_qcyaVQZux7bI4jQwL84MSLVwtho7lFFh0a06_xkPG06VcYcUwAg-WV9hlC8J4ebMGT9_6x1Fq84rYx48erF1RqCqE8fKvWcG5qBpL-5sLplhjhUNm0IXGm8xYjpT7fzsfhT38wFXdt9D-wnTkDf7b8xHt5ZzDwAuvtFFRl8nR5GJ8_JnLxEW8l"
+                />
+              </div>
+              <div
+                class="h-[150px] md:h-[180px] lg:h-[200px] rounded-xl md:rounded-2xl lg:rounded-[2.5rem] lg:rounded-tl-none overflow-hidden relative group"
+              >
+                <img
+                  alt="Modern construction achievement"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGmdsBtP2ZhAY-pyvN8ACSQQCCHC-LjF_RN39cT5pLw87YuLy56pwZxP2ZR02NIEheqAeGtNZyFb32wFfjnEuwM4wt0bctojRF9cQ4LHOX_0tapHQftbT9F2LsRZrjK-Dr3SdixAGrdsrAFgOqUEY4YGcB-Pe8a2E41frlNhTUosoapao1YVINBXGd0u-r8_y6Ln3blmV5rKNCCfxSQVrhMmf60PdRRw5deTsUCHJD7SA676JflY50P9Sxenewro8r1aKuVO6Bhojv"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2
+            class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-3 md:mb-4"
+          >
+            Our Core Values
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-full md:max-w-2xl mx-auto text-sm md:text-base">
+            These principles guide every project we undertake and every
+            relationship we build.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 service-card"
+          >
+            <div class="text-primary text-3xl md:text-4xl mb-3 md:mb-4">
+              <span class="material-icons-outlined">security</span>
+            </div>
+            <h3
+              class="font-display font-bold text-lg md:text-xl text-gray-900 dark:text-white mb-2 md:mb-3"
+            >
+              INTEGRITY
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Conducting business with honesty and transparency to build trust and<br> 
+              long-lasting relationships with our clients and partners.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 service-card"
+          >
+            <div class="text-primary text-3xl md:text-4xl mb-3 md:mb-4">
+              <span class="material-icons-outlined">gpp_good</span>
+            </div>
+            <h3
+              class="font-display font-bold text-lg md:text-xl text-gray-900 dark:text-white mb-2 md:mb-3"
+            >
+              EXCELLENCE
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Delivering quality services that exceed expectations through meticulous<br>
+               attention to detail and a commitment to craftsmanship.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 service-card"
+          >
+            <div class="text-primary text-3xl md:text-4xl mb-3 md:mb-4">
+              <span class="material-icons-outlined">handshake</span>
+            </div>
+            <h3
+              class="font-display font-bold text-lg md:text-xl text-gray-900 dark:text-white mb-2 md:mb-3"
+            >
+              RELIABILITY
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Being dependable and consistent in all operations.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 service-card"
+          >
+            <div class="text-primary text-3xl md:text-4xl mb-3 md:mb-4">
+              <span class="material-icons-outlined">diversity_3</span>
+            </div>
+            <h3
+              class="font-display font-bold text-lg md:text-xl text-gray-900 dark:text-white mb-2 md:mb-3"
+            >
+            INNOVATION
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Embracing modern solutions and continuous improvement.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 service-card"
+          >
+            <div class="text-primary text-3xl md:text-4xl mb-3 md:mb-4">
+              <span class="material-icons-outlined">sustainability</span>
+            </div>
+            <h3
+              class="font-display font-bold text-lg md:text-xl text-gray-900 dark:text-white mb-2 md:mb-3"
+            >
+              CUSTOMER FOCUS
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Prioritizing client satisfaction and long-term relationships 
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-surface-dark p-6 md:p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 service-card"
+          >
+            <div class="text-primary text-3xl md:text-4xl mb-3 md:mb-4">
+              <span class="material-icons-outlined">schedule</span>
+            </div>
+            <h3
+              class="font-display font-bold text-lg md:text-xl text-gray-900 dark:text-white mb-2 md:mb-3"
+            >
+              Timely Delivery
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              We respect your time and deliver projects on schedule without
+              compromising on quality or safety standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 md:py-16 lg:py-20 bg-primary/5 dark:bg-primary/10">
+      <div class="container mx-auto px-4 sm:px-6 text-center">
+        <div class="max-w-full md:max-w-3xl mx-auto">
+          <h2
+            class="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-4 md:mb-6"
+          >
+            Ready to Build With Us?
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg mb-6 md:mb-10 leading-relaxed">
+            Join the hundreds of satisfied clients who have trusted us with
+            their construction needs. Let's discuss how we can bring your vision
+            to life.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mobile-gap-y-4">
+            <button
+              class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2.5 md:py-3 px-6 md:px-8 rounded-lg transition-transform hover:scale-105 shadow-lg text-sm md:text-base mobile-full-width"
+              onclick="window.location.href='contact.html'"
+            >
+              Contact Us Today
+            </button>
+            <button
+              class="border-2 border-primary hover:bg-primary/10 text-primary dark:text-white font-medium py-2.5 md:py-3 px-6 md:px-8 rounded-lg transition-colors text-sm md:text-base mobile-full-width"
+            >
+              Download Company Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+        <!-- Footer -->
+    <footer
+      class="bg-white dark:bg-background-dark py-12 md:py-16 border-t border-gray-200 dark:border-gray-800"
+    >
+      <div class="container mx-auto px-4 sm:px-6 text-center">
+        <div class="flex justify-center items-center gap-2 mb-6 md:mb-8">
+          <div
+            class="font-display font-bold text-2xl md:text-3xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+          >
+            GELE<span class="text-primary text-4xl md:text-5xl leading-none -mt-1 md:-mt-2">H</span
+            >OVA
+          </div>
+        </div>
+        <p
+          class="text-[0.5rem] md:text-[0.6rem] font-bold text-gray-400 uppercase tracking-widest -mt-4 md:-mt-6 mb-6 md:mb-8"
+        >
+          INVESTMENT LIMITED
+        </p>
+        <div
+          class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 mb-8 md:mb-10 text-sm font-medium text-gray-600 dark:text-gray-400"
+        >
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="text-primary font-bold" href="services.html">Services</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </div>
+        <div class="flex justify-center gap-3 md:gap-4 mb-8 md:mb-10">
+          <a
+  class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+  href="https://www.facebook.com/your-username"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit our Facebook page"
+>
+  <i class="fab fa-facebook-f text-sm md:text-base"></i>
+</a>
+
+<a
+  class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+  href="https://x.com/your-username"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit our Twitter profile"
+>
+  <i class="fab fa-twitter text-sm md:text-base"></i>
+</a>
+
+<a
+  class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+  href="https://www.linkedin.com/in/your-username"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit our LinkedIn profile"
+>
+  <i class="fab fa-linkedin-in text-sm md:text-base"></i>
+</a>
+
+<a
+  class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+  href="https://www.instagram.com/your-username"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit our Instagram profile"
+>
+  <i class="fab fa-instagram text-sm md:text-base"></i>
+</a>
+        </div>
+        <p class="text-xs md:text-sm text-gray-500 dark:text-gray-500 px-2">
+          © 2026 GELEHOVA INVESTMENT LIMITED. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button
+      class="theme-toggle w-10 h-10 md:w-12 md:h-12 bg-primary text-gray-900 rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-500 focus:outline-none transition-all"
+      onclick="toggleTheme()"
+    >
+      <span class="material-icons-outlined text-lg">brightness_4</span>
+    </button>
+
+    <script src="js/script.js"></script>
+
+  </body>
+</html>

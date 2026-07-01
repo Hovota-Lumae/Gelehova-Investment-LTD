@@ -1,0 +1,271 @@
+/* ==========================================================================
+   CSS Stylesheet
+   ========================================================================== */
+
+/* --- 1. Navigation & Hamburger Menu --- */
+.hamburger-menu {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Set transform-origin to center to ensure smooth rotation into an X */
+.hamburger-line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* --- 2. Shared Global Transitions & Hover States --- */
+.trust-badge,
+.counter-item,
+.service-card,
+.team-card,
+.project-card,
+.progress-step,
+.form-input {
+    transition: all 0.3s ease;
+}
+
+/* Consolidated standard hover elevations */
+.counter-item:hover,
+.service-card:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Inner image scaling effects */
+.team-image,
+.project-image {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-card:hover .team-image,
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* --- 3. UI Components --- */
+
+/* Trust Badges Marquee */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+    display: flex;
+    animation: scroll 30s linear infinite;
+}
+
+.trust-badge {
+    min-width: 220px;
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.trust-badge span {
+    font-size: 3rem;
+    color: #f4b82f;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.trust-badge p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.trust-badge:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Form inputs & Focus rings */
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(244, 184, 47, 0.3);
+}
+
+/* Floating theme toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+/* Hide scrollbars elegantly */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* --- 4. Interactive Forms & Accordions --- */
+
+/* Progress Indicator Steps */
+.progress-step.active {
+    background-color: #f4b82f;
+    color: #1f2937;
+}
+
+.progress-step.completed {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+/* Input Range / Budget Slider Customizations */
+.budget-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: #e5e7eb;
+    height: 6px;
+    border-radius: 3px;
+    outline: none;
+}
+
+/* Shared Slider Thumb styles */
+.budget-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #f4b82f;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+}
+
+.budget-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.budget-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #f4b82f;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+}
+
+.budget-slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Multi-step Form Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Smooth Accordion FAQ Functionality */
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.faq-answer > div {
+    overflow: hidden;
+}
+
+.faq-answer.active {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+/* --- 5. Custom Grid Layout Masks (About Page) --- */
+.mask-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.mask-item-1, 
+.mask-item-2, 
+.mask-item-3 {
+    overflow: hidden;
+    height: 100%;
+}
+
+.mask-item-1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    border-radius: 40px 40px 0 0;
+}
+
+.mask-item-2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    border-radius: 0 0 0 40px;
+}
+
+.mask-item-3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    border-radius: 0 0 40px 0;
+}
+
+/* --- 6. Dark Mode Variations --- */
+.dark .trust-badge {
+    background: #1e1e1e;
+    border-color: #2a2a2a;
+}
+
+.dark .trust-badge p {
+    color: #d1d5db;
+}

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Services - Gelehova Investment LTD</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Oswald:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F4B82F",
+              "background-light": "#FAFAFA",
+              "background-dark": "#121212",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E1E1E",
+              "text-light": "#1F2937",
+              "text-dark": "#E5E7EB",
+              "secondary-dark": "#232D3F",
+            },
+            fontFamily: {
+              display: ["Oswald", "sans-serif"],
+              body: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-300"
+  >
+    <!-- Navigation -->
+    <nav
+      class="bg-white dark:bg-surface-dark py-4 shadow-sm sticky top-0 z-50"
+    >
+      <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <a href="index.html" class="flex items-center gap-2">
+            <img
+              src="Pictures/Logo.png"
+              alt="Gelehova Investment Limited logo"
+              class="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full bg-white/80 p-1 shadow-sm"
+            />
+            <div class="flex flex-col">
+              <div
+                class="font-display font-bold text-xl sm:text-2xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+              >
+                GELE<span class="text-primary text-3xl sm:text-4xl leading-none -mt-1">H</span
+                >OVA
+              </div>
+              <span
+                class="text-[0.5rem] sm:text-[0.6rem] font-bold text-gray-500 uppercase tracking-widest mt-1 hidden sm:block"
+                >INVESTMENT LTD</span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="services.html">Services</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="text-primary font-bold" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </div>
+        <form class="hidden lg:flex items-center rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-3 py-2 shadow-sm">
+          <input
+            type="text"
+            placeholder="Search"
+            class="bg-transparent outline-none text-sm text-gray-700 dark:text-gray-200 w-28 lg:w-36"
+          />
+          <button type="submit" class="ml-2 text-gray-500 dark:text-gray-400 hover:text-primary" aria-label="Search">
+            <span class="material-icons-outlined text-lg">search</span>
+          </button>
+        </form>
+        <!-- Desktop Get Quote button -->
+        <button
+          class="hidden md:flex bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-2 px-4 lg:px-6 rounded shadow-lg hover:shadow-xl transition-all text-sm lg:text-base"
+          onclick="window.location.href='quote.html'"
+        >
+          Get Quote
+        </button>
+        <!-- Mobile hamburger menu button -->
+        <button
+          id="hamburger-btn"
+          class="md:hidden hamburger-menu flex flex-col justify-center items-center w-10 h-10 relative focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 mb-1.5 transition-all"></span>
+          <span class="hamburger-line bg-gray-900 dark:bg-white w-6 h-0.5 transition-all"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed inset-0 bg-white dark:bg-surface-dark z-40 pt-20 px-6 md:hidden"
+    >
+      <div class="flex flex-col gap-6">
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="index.html"
+        >
+          Home
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="about.html"
+        >
+          About Us
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="projects.html"
+        >
+          Projects
+        </a>
+        <a
+          class="text-lg font-medium text-primary font-bold py-3 border-b border-gray-100 dark:border-gray-800"
+          href="services.html"
+        >
+          Services
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="team.html"
+        >
+          Our Team
+        </a>
+        <a
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-3 border-b border-gray-100 dark:border-gray-800"
+          href="contact.html"
+        >
+          Contact
+        </a>
+        <button
+          class="mt-8 bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg transition-all w-full"
+          onclick="window.location.href='quote.html'"
+        >
+          Get Quote
+        </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Hero -->
+    <header class="bg-[#1A222E] dark:bg-black py-20 md:py-28">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl">
+          <h1
+            class="font-display font-bold text-5xl md:text-6xl text-primary leading-tight mb-4"
+          >
+            Our Services
+          </h1>
+          <h2
+            class="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-6"
+          >
+            Building Excellence Since 2026!
+          </h2>
+          <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+           Gelehova Investment Limited is committed to maintaining high standards of workmanship, safety, and environmental responsibility across all its operations. The company ensures that all services are delivered in compliance with industry best practices and relevant regulations.
+
+
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="quote.html"
+              class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded transition-transform hover:scale-105"
+            >
+              Get Quote
+            </a>
+            <a
+              href="projects.html"
+              class="border border-gray-500 hover:border-white text-white font-medium py-3 px-8 rounded transition-colors hover:bg-white/10"
+            >
+              View Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services List -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="font-display font-bold text-4xl text-gray-900 dark:text-white mb-4"
+          >
+            Comprehensive Construction Services
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+            We provide end-to-end solutions for all your construction needs,
+            ensuring quality, safety, and timely delivery.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-sm service-card border border-gray-100 dark:border-gray-800"
+          >
+            <div class="text-primary text-5xl mb-6">
+              <span class="material-icons-outlined">apartment</span>
+            </div>
+            <h3
+              class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-4"
+            >
+              Residential Construction
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+              Custom home building, renovations, and extensions tailored to your
+              lifestyle and preferences.
+            </p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Custom home design</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Home renovations</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Room additions</span
+                >
+              </li>
+            </ul>
+            <a
+              href="contact.html"
+              class="inline-flex items-center text-primary font-medium hover:text-yellow-500 transition-colors"
+            >
+              Learn More
+              <span class="material-icons-outlined ml-2 text-lg"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-lg service-card border border-gray-100 dark:border-gray-800 transform md:-translate-y-2"
+          >
+            <div class="text-primary text-5xl mb-6">
+              <span class="material-icons-outlined">architecture</span>
+            </div>
+            <h3
+              class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-4"
+            >
+              Interior Design
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+              Complete interior design services creating beautiful, functional
+              spaces that reflect your personality.
+            </p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Space planning</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Material selection</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Custom furniture</span
+                >
+              </li>
+            </ul>
+            <a
+              href="contact.html"
+              class="inline-flex items-center text-primary font-medium hover:text-yellow-500 transition-colors"
+            >
+              Learn More
+              <span class="material-icons-outlined ml-2 text-lg"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-sm service-card border border-gray-100 dark:border-gray-800"
+          >
+            <div class="text-primary text-5xl mb-6">
+              <span class="material-icons-outlined">construction</span>
+            </div>
+            <h3
+              class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-4"
+            >
+              Structural Repair
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              Expert structural assessment and repair services to ensure the
+              safety and longevity of your building.
+            </p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Foundation repair</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Structural reinforcement</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Damage assessment</span
+                >
+              </li>
+            </ul>
+            <a
+              href="contact.html"
+              class="inline-flex items-center text-primary font-medium hover:text-yellow-500 transition-colors"
+            >
+              Learn More
+              <span class="material-icons-outlined ml-2 text-lg"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-sm service-card border border-gray-100 dark:border-gray-800"
+          >
+            <div class="text-primary text-5xl mb-6">
+              <span class="material-icons-outlined">engineering</span>
+            </div>
+            <h3
+            class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-4"
+            >
+              Commercial Construction
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+              Office buildings, retail spaces, and commercial facilities built
+              to meet business needs and regulations.
+            </p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Office buildings</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Retail spaces</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Industrial facilities</span
+                >
+              </li>
+            </ul>
+            <a
+              href="contact.html"
+              class="inline-flex items-center text-primary font-medium hover:text-yellow-500 transition-colors"
+            >
+              Learn More
+              <span class="material-icons-outlined ml-2 text-lg"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-sm service-card border border-gray-100 dark:border-gray-800"
+          >
+            <div class="text-primary text-5xl mb-6">
+              <span class="material-icons-outlined">precision_manufacturing</span>
+            </div>
+            <h3
+              class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-4"
+            >
+              Project Management
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+              Professional project oversight ensuring your construction project
+              stays on schedule and within budget.
+            </p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Timeline management</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Budget control</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Quality assurance</span
+                >
+              </li>
+            </ul>
+            <a
+              href="contact.html"
+              class="inline-flex items-center text-primary font-medium hover:text-yellow-500 transition-colors"
+            >
+              Learn More
+              <span class="material-icons-outlined ml-2 text-lg"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-sm service-card border border-gray-100 dark:border-gray-800"
+          >
+            <div class="text-primary text-5xl mb-6">
+              <span class="material-icons-outlined">roofing</span>
+            </div>
+            <h3
+              class="font-display font-bold text-2xl text-gray-900 dark:text-white mb-4"
+            >
+              Renovation & Remodeling
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+              Transform existing spaces with our renovation services that
+              preserve character while adding modern functionality.
+            </p>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Kitchen remodeling</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Bathroom upgrades</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-primary"
+                  ><i class="fas fa-check-circle text-sm"></i
+                ></span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Whole-house renovations</span
+                >
+              </li>
+            </ul>
+            <a
+              href="contact.html"
+              class="inline-flex items-center text-primary font-medium hover:text-yellow-500 transition-colors"
+            >
+              Learn More
+              <span class="material-icons-outlined ml-2 text-lg"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="py-20 bg-gradient-to-r from-[#1A222E] to-[#232D3F] dark:from-black dark:to-gray-900"
+      id="contact"
+    >
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2
+            class="font-display font-bold text-4xl md:text-5xl text-white mb-6"
+          >
+            Ready to Start Your Project?
+          </h2>
+          <p class="text-gray-300 text-lg mb-10 leading-relaxed">
+            Contact us today for a free consultation and quote. Let's build
+            something amazing together.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="bg-primary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-lg transition-transform hover:scale-105 shadow-lg"
+              onclick="window.location.href='quote.html'"
+            >
+              Get Free Quote
+            </button>
+            <button
+              class="border-2 border-white hover:bg-white/10 text-white font-medium py-3 px-8 rounded-lg transition-colors"
+              onclick="window.location.href='tel:+18001234567'"
+            >
+              Call Now: +675 70613174
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-background-dark py-16 border-t border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center items-center gap-2 mb-8">
+          <div
+            class="font-display font-bold text-3xl tracking-tighter text-gray-900 dark:text-white flex items-center"
+          >
+            GELE<span class="text-primary text-5xl leading-none -mt-2">H</span
+            >VA
+          </div>
+        </div>
+        <p
+          class="text-[0.6rem] font-bold text-gray-400 uppercase tracking-widest -mt-6 mb-8"
+        >
+          INVESTMENT LIMITED
+        </p>
+        <div
+          class="flex flex-wrap justify-center gap-8 md:gap-12 mb-10 text-sm font-medium text-gray-600 dark:text-gray-400"
+        >
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="text-primary font-bold" href="services.html">Services</a>
+          <a class="hover:text-primary transition-colors" href="projects.html">Projects</a>
+          <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+          <a class="hover:text-primary transition-colors" href="team.html">Our Team</a>
+          <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </div>
+        <div class="flex justify-center gap-4 mb-10">
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full bg-[#232D3F] flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all"
+            href="#"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-500">
+          © Gelehova Investment LTD. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button
+      class="theme-toggle w-12 h-12 bg-primary text-gray-900 rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-500 focus:outline-none transition-all"
+      onclick="toggleTheme()"
+    >
+      <span class="material-icons-outlined">brightness_4</span>
+    </button>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
