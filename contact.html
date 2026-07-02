@@ -691,90 +691,38 @@ Location: SECTION 04, ALLOTMENT 07, BOMANA,<br>
     </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // --- FAQ Accordion Logic ---
-        const faqQuestions = document.querySelectorAll('.faq-question');
-
-        faqQuestions.forEach(question => {
-          question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-
-            faqQuestions.forEach(otherQuestion => {
-              if (otherQuestion !== question) {
-                otherQuestion.classList.remove('active');
-                otherQuestion.nextElementSibling.classList.remove('active');
-              }
-            });
-
-            question.classList.toggle('active');
-            answer.classList.toggle('active');
-          });
-        });
-
-        // --- Mobile Menu Toggle Logic ---
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        if (hamburgerBtn && mobileMenu) {
-          hamburgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-          });
-        }
-      });
-    </script>
-    <script src="js/script.js"></script>
-    <script src="js/form-handler.js"></script>
-    <button
-      class="theme-toggle w-12 h-12 bg-primary text-gray-900 rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-500 focus:outline-none transition-all"
-      onclick="toggleTheme()"
-    >
-      <span class="material-icons-outlined">brightness_4</span>
-    </button>
-    <footer>
-      <div> 
-        <p class="text-center text-gray-500 dark:text-gray-400 text-xs mt-4">
-          &copy; 2026 Gelehova Investment LTD. All rights reserved.
-        </p>
-      </div>
-    </footer>
-    <script>
-  // Target your existing form (it looks like your submit button says "Send Message")
-  // If your form has an ID like id="contactForm", change 'form' to '#contactForm'
-  const formElement = document.querySelector('form');
-
-  if (formElement) {
-    formElement.addEventListener('submit', function(e) {
-      e.preventDefault(); // Stop page from reloading
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevents the page from refreshing
 
       const form = this;
-      const submitBtn = form.querySelector('button') || form.querySelector('input[type="submit"]');
+      const submitBtn = form.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn ? submitBtn.innerText : 'Send Message';
 
+      // Provide immediate feedback to the user
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerText = 'Sending...';
       }
 
-      // Step 1: Map your HTML inputs exactly to what your Apps Script expects
-      // Note: Make sure the 'name' attributes on your HTML match the keys below!
+      // Explicitly pull fields to perfectly match your form names & your Apps Script
       const data = {
-        'first-name': form.querySelector('[name="first-name"]')?.value || form.querySelector('[name="firstName"]')?.value || '',
-        'last-name': form.querySelector('[name="last-name"]')?.value || form.querySelector('[name="lastName"]')?.value || '',
-        'email': form.querySelector('[name="email"]')?.value || '',
-        'phone': form.querySelector('[name="phone"]')?.value || '',
-        'company': '', // Left blank since it's not in your design layout
-        'project-type': form.querySelector('[name="project-type"]')?.value || form.querySelector('[name="projectType"]')?.value || '',
-        'message': form.querySelector('textarea')?.value || form.querySelector('[name="message"]')?.value || '',
-        'newsletter': form.querySelector('input[type="checkbox"]')?.checked ? 'Yes' : 'No'
+        'first-name': document.getElementById('first-name').value,
+        'last-name': document.getElementById('last-name').value,
+        'email': document.getElementById('email').value,
+        'phone': document.getElementById('phone').value,
+        'company': '', // Explicitly pass blank as it is missing from your HTML form fields
+        'project-type': document.getElementById('project-type').value,
+        'message': document.getElementById('message').value,
+        'newsletter': document.getElementById('newsletter').checked ? 'Yes' : 'No'
       };
 
-      // Step 2: Paste your Google Apps Script Web App URL here
-      const webAppUrl = 'https://script.google.com/macros/s/AKfycbyMi6vJz6fHiADVSCI4barap-nVegQuJDxJyBuOYcLEEXk3SqS9fVwCsuwdgnrMwwsE/exec';
+      // ⚠️ REPLACE THIS with your actual Google Apps Script Web App execution URL
+      const webAppUrl = 'YOUR_WEB_APP_URL_HERE';
 
-      // Step 3: Send data securely to Google Sheets
+      // Use Fetch API to pass the clean object map to Google Sheets
       fetch(webAppUrl, {
         method: 'POST',
-        mode: 'no-cors', // Crucial configuration for Google Apps Script Web Apps
+        mode: 'no-cors', // Essential configuration for bypassing CORS limits with Google Web Apps
         headers: {
           'Content-Type': 'application/json'
         },
@@ -782,20 +730,22 @@ Location: SECTION 04, ALLOTMENT 07, BOMANA,<br>
       })
       .then(() => {
         alert('Thank you! Your message has been sent successfully.');
-        form.reset(); // Clears out form inputs
+        form.reset(); // Clear all form inputs
       })
       .catch(error => {
         console.error('Submission Error:', error);
-        alert('Something went wrong. Please check your connection and try again.');
+        alert('Something went wrong. Please check your internet connection or try again.');
       })
       .finally(() => {
+        // Restore button state back to standard formatting
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerText = originalBtnText;
         }
       });
     });
-  }
-</script>
+  </script>
+</body>
+</html>
   </body>
 </html>
