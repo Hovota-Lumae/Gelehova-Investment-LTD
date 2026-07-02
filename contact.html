@@ -689,62 +689,66 @@ Location: SECTION 04, ALLOTMENT 07, BOMANA,<br>
         </div>
       </div>
     </footer>
-
+<!-- Script handling Form Submission to Google Sheets -->
     <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevents the page from refreshing
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Stop page from refreshing
 
-      const form = this;
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn ? submitBtn.innerText : 'Send Message';
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton ? submitButton.innerHTML : 'Send Message';
 
-      // Provide immediate feedback to the user
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Sending...';
-      }
-
-      // Explicitly pull fields to perfectly match your form names & your Apps Script
-      const data = {
-        'first-name': document.getElementById('first-name').value,
-        'last-name': document.getElementById('last-name').value,
-        'email': document.getElementById('email').value,
-        'phone': document.getElementById('phone').value,
-        'company': '', // Explicitly pass blank as it is missing from your HTML form fields
-        'project-type': document.getElementById('project-type').value,
-        'message': document.getElementById('message').value,
-        'newsletter': document.getElementById('newsletter').checked ? 'Yes' : 'No'
-      };
-
-      // ⚠️ REPLACE THIS with your actual Google Apps Script Web App execution URL
-      const webAppUrl = 'https://script.google.com/home/projects/1_u-AJ-JvcrJ9tU7KKMXN0k0-T98dyQde15RTIw2htomjqptCxmw_P1uR/edit';
-
-      // Send the request using the URL encoded body format
-      fetch(webAppUrl, {
-        method: 'POST',
-        mode: 'no-cors', 
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: new URLSearchParams(data).toString()
-      })
-      .then(() => {
-        alert('Thank you! Your message has been sent successfully.');
-        form.reset(); // Clear all form inputs
-      })
-      .catch(error => {
-        console.error('Submission Error:', error);
-        alert('Something went wrong. Please check your internet connection or try again.');
-      })
-      .finally(() => {
-        // Restore button state back to standard formatting
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerText = originalBtnText;
+        // 1. Change button status to show progress
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.innerHTML = 'Sending...';
         }
+
+        // 2. Insert your deployed Apps Script Web App URL here
+        // (Make sure this is the URL ending in /exec)
+        const webAppUrl = 'YOUR_DEPLOYED_WEB_APP_URL_HERE';
+
+        // 3. Gather data using keys your Apps Script expects
+        const formData = {
+          'first-name': document.getElementById('first-name').value,
+          'last-name': document.getElementById('last-name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          company: document.getElementById('company') ? document.getElementById('company').value : '',
+          'project-type': document.getElementById('project-type').value,
+          message: document.getElementById('message').value,
+          newsletter: document.getElementById('newsletter') ? document.getElementById('newsletter').checked : false
+        };
+
+        // 4. Send data via POST request
+        fetch(webAppUrl, {
+          method: 'POST',
+          mode: 'no-cors', // Bypasses browser CORS restrictions for cross-origin Apps Script execution
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(() => {
+          // Note: with mode 'no-cors', fetch won't return status codes, 
+          // but an opaque response indicates it successfully reached the script server.
+          alert('Thank you! Your message has been safely sent to Gelehova Investment LTD.');
+          document.getElementById('contactForm').reset();
+        })
+        .catch(error => {
+          console.error('Submission error:', error);
+          alert('Something went wrong while sending your message. Please try again.');
+        })
+        .finally(() => {
+          // 5. Restore button state
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+          }
+        });
       });
-    });
-  </script>
+    </script>
+  </body>
+</html>
 </body>
 </html>
   </body>
