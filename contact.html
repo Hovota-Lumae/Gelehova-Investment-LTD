@@ -717,16 +717,16 @@ Location: SECTION 04, ALLOTMENT 07, BOMANA,<br>
       };
 
       // ⚠️ REPLACE THIS with your actual Google Apps Script Web App execution URL
-      const webAppUrl = 'YOUR_WEB_APP_URL_HERE';
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbyMi6vJz6fHiADVSCI4barap-nVegQuJDxJyBuOYcLEEXk3SqS9fVwCsuwdgnrMwwsE/exec';
 
-      // Use Fetch API to pass the clean object map to Google Sheets
+      // Send the request using the URL encoded body format
       fetch(webAppUrl, {
         method: 'POST',
-        mode: 'no-cors', // Essential configuration for bypassing CORS limits with Google Web Apps
+        mode: 'no-cors', 
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: JSON.stringify(data)
+        body: new URLSearchParams(data).toString()
       })
       .then(() => {
         alert('Thank you! Your message has been sent successfully.');
